@@ -1,0 +1,89 @@
+
+do
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xxtylee/Lua/refs/heads/main/decaying", true))()
+
+        local Tabs = {
+            Combat = Library:addTab("Combat", "http://www.roblox.com/asset/?id=17587360381"),
+            Visuals = Library:addTab("Visuals", "http://www.roblox.com/asset/?id=17587416409"),
+            Misc = Library:addTab("Misc", "http://www.roblox.com/asset/?id=17582458174"), 
+            Local = Library:addTab("Local", "http://www.roblox.com/asset/?id=17582441580"), 
+            Settings = Library:addTab("Settings", "http://www.roblox.com/asset/?id=17587482523")
+        }
+
+
+        local gameTab = Tabs.Settings:createGroup('left', 'Game | Etc')
+
+        --// Game
+        do
+    
+            gameTab:addToggle({text = "Menu Bind",default = true,flag = "MenuBind_Toggle",callback = function(state)
+            end}):addKeybind({text = "Menu Bind",type = "toggle",key = Enum.KeyCode.K,flag = "menubindkeybind_toggle",callback = function(state)
+            Library.keybind = state
+             end})
+    
+            gameTab:addSlider({text = "fps cap:", min = 60, max = 999, suffix = "fps", float = 1, default = 999, flag = "fpscap_slider",callback = function(Value)
+                setfpscap(Value)
+            end})
+    
+            gameTab:addButton({text = "Copy Join Code",callback = function(state)
+                setclipboard(("game:GetService('TeleportService'):TeleportToPlaceInstance(%s, '%s')"):format(game.PlaceId, game.JobId))
+                Library:Notify("fobro - succesfully copied join code!", 5)
+                end})
+    
+            gameTab:addButton({text = "rejoin",callback = function(Value)
+                game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId, game.JobId)
+                library:Notify("fobro - succesfully rejoining server!", 5)
+            end})
+        end
+
+        local gameTab = Tabs.Settings:createGroup('right', 'Game | Etc')
+
+        --// Game
+        do
+    
+            gameTab:addToggle({text = "Menu Bind",default = true,flag = "MenuBind_Toggle",callback = function(state)
+            end}):addKeybind({text = "Menu Bind",type = "toggle",key = Enum.KeyCode.K,flag = "menubindkeybind_toggle",callback = function(state)
+            Library.keybind = state
+             end})
+    
+            gameTab:addSlider({text = "fps cap:", min = 60, max = 999, suffix = "fps", float = 1, default = 999, flag = "fpscap_slider",callback = function(Value)
+                setfpscap(Value)
+            end})
+    
+            gameTab:addButton({text = "Copy Join Code",callback = function(state)
+                setclipboard(("game:GetService('TeleportService'):TeleportToPlaceInstance(%s, '%s')"):format(game.PlaceId, game.JobId))
+                Library:Notify("fobro - succesfully copied join code!", 5)
+                end})
+    
+            gameTab:addButton({text = "rejoin",callback = function(Value)
+                game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId, game.JobId)
+                library:Notify("fobro - succesfully rejoining server!", 5)
+            end})
+        end
+
+        local gameTab = Tabs.Settings:createGroup('center', 'Game | Etc')
+
+        --// Game
+        do
+    
+            gameTab:addToggle({text = "Menu Bind",default = true,flag = "MenuBind_Toggle",callback = function(state)
+            end}):addKeybind({text = "Menu Bind",type = "toggle",key = Enum.KeyCode.K,flag = "menubindkeybind_toggle",callback = function(state)
+            Library.keybind = state
+             end})
+    
+            gameTab:addSlider({text = "fps cap:", min = 60, max = 999, suffix = "fps", float = 1, default = 999, flag = "fpscap_slider",callback = function(Value)
+                setfpscap(Value)
+            end})
+    
+            gameTab:addButton({text = "Copy Join Code",callback = function(state)
+                setclipboard(("game:GetService('TeleportService'):TeleportToPlaceInstance(%s, '%s')"):format(game.PlaceId, game.JobId))
+                Library:Notify("fobro - succesfully copied join code!", 5)
+                end})
+    
+            gameTab:addButton({text = "rejoin",callback = function(Value)
+                game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId, game.JobId)
+                library:Notify("fobro - succesfully rejoining server!", 5)
+            end})
+        end
+
+end 
